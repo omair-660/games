@@ -3,28 +3,35 @@
     --bg-nav:#3a497b;
     --color-active:#06a2d6;
     --color:#ffffff;
+    --color-a:#f7f7f7;
 }
 .light{
     --bg-black:#fdfdfd; 
     --color:#414141;
-    
+    --color-a:#f7f7f7;
 }
 body{
     background-color: var(--bg-black);
     font-family: "Comfortaa", cursive;
+    transition: 0.5s;
 }
 nav .container{
     background-color: var(--bg-nav);
     box-shadow: 0 0 10px #070707b3;
 }
-nav .nav-link,nav .navbar-brand h5,.box h6,.box p{
+.box h6,.box p{
     color:var(--color)!important;
+    transition: 0.5s;
+}
+nav .navbar-brand h5,nav .nav-link{
+    color:var(--color-a)
 }
 nav .navbar-brand h5{
    font-size: 25px;
 }
 .navbar-nav .nav-link.active, .nav-link:hover, .navbar-nav .nav-link.show{
     color:var(--color-active)!important;
+    transition: 0.5s;
 }
 nav .navbar-brand img{
     width:52px;
@@ -47,8 +54,8 @@ nav .navbar-brand img{
      transition: 0.5s;
      opacity: 0;
      position: absolute;
-     bottom: 0;
-     left: 0;
+     top: 50%;
+     left: 50%;
      background: #1d2023;
      color: whitesmoke!important;
      padding: 4px;
@@ -58,7 +65,7 @@ nav .navbar-brand img{
  }
  .cart:hover .box .date{
      opacity: 1;
-     transform: translateY(0);
+     transform: translate(-50%,-50%);
  }
  .scroll{
      right: 15px;
@@ -87,7 +94,6 @@ nav .navbar-brand img{
     background: #000000; 
     border-radius: 6px; 
 }
-
 .loader {
     width: 48px;
     height: 48px;
@@ -97,8 +103,8 @@ nav .navbar-brand img{
     border-right: 4px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-  }
-  .loader::after {
+}
+.loader::after {
     content: '';  
     box-sizing: border-box;
     position: absolute;
@@ -110,16 +116,16 @@ nav .navbar-brand img{
     border-left: 4px solid #FF3D00;
     border-bottom: 4px solid transparent;
     animation: rotation 0.5s linear infinite reverse;
-  }
-  @keyframes rotation {
+}
+@keyframes rotation {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  } 
-  .load{
+}
+.load {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -130,4 +136,23 @@ nav .navbar-brand img{
     left: 0;
     background: rgba(0,0,0,0.9);
     z-index: 9999;
-  }
+}
+.details {
+    background-color: var(--bg-black);
+    overflow: auto;
+}
+.details a{
+    color:#fff;
+    text-decoration: none;
+}
+    
+.close{
+    cursor: pointer;
+}
+nav i{
+    transition: 0.5s;
+    cursor: pointer;
+}
+nav i:hover{
+    opacity: 0.5;
+}
