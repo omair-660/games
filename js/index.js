@@ -63,7 +63,7 @@ function displayGames() {
         <div class="col-lg-3 col-md-6 mb-4 cart" data-id="${arrayContent[i].id}">
             <div class="box border border-black rounded-2 overflow-hidden">
                 <div class="image p-2">
-                    <img src="${arrayContent[i].thumbnail}" class="w-100 card-img-top h-100 rounded-2" alt="">
+                    <img src="${arrayContent[i].thumbnail}" class="w-100 card-img-top h-100 rounded-2" alt="${arrayContent[i].title}">
                 </div>
                 <div class="text p-2">
                     <div class="d-flex justify-content-between align-items-center">
@@ -103,16 +103,16 @@ function displayGameDetails(details) {
     let content = `
         <div class="col-md-5">
             <div class="">
-                <img src="${details.thumbnail}" alt="${details.title}" class="w-100">
+                <img src="${details.thumbnail}" alt="${details.title}" class="w-100 rounded-2">
             </div>
         </div>
         <div class="col-md-7">
             <div class="">
                 <h2>title: ${details.title}</h2>
-                <h5 class="my-2">category: <span class="bg-info badge text-dark rounded-4 p-2">${details.genre}</span></h5><br>
-                <h5 class="my-2">Platform: <span class="bg-info badge text-dark rounded-4 p-2">${details.platform}</span></h5><br>
-                <h5 class="my-2">Status: <span class="bg-info badge text-dark rounded-4 p-2">${details.status}</span></h5><br>
-                <p>${details.description}.</p>
+                <h5 class="my-2 fs-6">category: <span class="bg-info badge text-dark rounded-4 p-2">${details.genre}</span></h5>
+                <h5 class="my-2 fs-6">Platform: <span class="bg-info badge text-dark rounded-4 p-2">${details.platform}</span></h5>
+                <h5 class="my-2 fs-6">Status: <span class="bg-info badge text-dark rounded-4 p-2">${details.status}</span></h5>
+                <p class="small mt-2">${details.description}.</p>
                 <button class="btn btn-outline-warning"><a href="${details.game_url}" target="_blank">Play Now</a></button>
             </div>
         </div>

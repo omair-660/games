@@ -56,7 +56,7 @@ nav .navbar-brand img{
      position: absolute;
      top: 50%;
      left: 50%;
-     background: #1d2023;
+     background: var(--bg-black);
      color: whitesmoke!important;
      padding: 4px;
      border-radius: 8px;
@@ -140,6 +140,7 @@ nav .navbar-brand img{
 .details {
     background-color: var(--bg-black);
     overflow: auto;
+    color:var(--color)
 }
 .details a{
     color:#fff;
@@ -148,6 +149,11 @@ nav .navbar-brand img{
     
 .close{
     cursor: pointer;
+    color: red;
+    transition: 0.5s;
+}
+.close:hover{
+    opacity: 0.5;
 }
 nav i{
     transition: 0.5s;
