@@ -173,3 +173,44 @@ section{
 nav,.cart{
     display: none;
 }
+.spans{
+    width:35px;
+    position: relative;
+    height: 20px;
+}
+.spans span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color:#fff;
+    transition: 0.5s;
+}
+.spans span:nth-child(1){
+    top: 0;
+}
+.spans span:nth-child(2){
+    top: 50%;
+}
+.spans span:nth-child(3){
+    top: 100%;
+}
+
+.spans span:nth-child(1).active{
+    background-color:red;
+    top: 50%;
+    transform: rotate(-45deg);
+}
+.spans span:nth-child(2).active{
+    background-color:red;
+    opacity: 0;  
+}
+.spans span:nth-child(3).active{
+    background-color:red;
+    transform: rotate(45deg);
+    top: 50%;
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+}
