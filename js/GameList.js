@@ -1,4 +1,3 @@
-
 import { GameDetails } from './GameDetails.js';
 
 export class GameList {
@@ -13,6 +12,7 @@ export class GameList {
         this.scrollButton = document.querySelector(".scroll");
         this.section = $("section");
         this.nav = $("nav");
+        this.details = $(".details");
         this.init();
     }
 
@@ -70,15 +70,15 @@ export class GameList {
         this.row.innerHTML = content;
         
         let carts = document.querySelectorAll(".cart");
-        carts.forEach(cart => {
-            cart.addEventListener("click", (event) => {
+        for (let i = 0; i < carts.length; i++) {
+            carts[i].addEventListener("click", (event) => {
                 let gameId = event.currentTarget.getAttribute('data-id');
                 let gameDetails = new GameDetails();
                 gameDetails.getGameDetails(gameId);
+                this.showDetails();
             });
-        });
+        }
     }
-
     showLoader() {
         this.loader.style.display = "flex";
     }
@@ -129,17 +129,23 @@ export class GameList {
             });
     }
 
+    showDetails() {
+        this.details.fadeIn(1000);
+    }
+
     init() {
         this.getGame("mmorpg");
 
-        this.links.forEach(link => {
-            link.addEventListener("click", (event) => {
+        for (let i = 0; i < this.links.length; i++) {
+            this.links[i].addEventListener("click", (event) => {
                 event.preventDefault();
-                this.links.forEach(link => link.classList.remove("active"));
+                for (let j = 0; j < this.links.length; j++) {
+                    this.links[j].classList.remove("active");
+                }
                 event.currentTarget.classList.add("active");
                 this.getGame(event.currentTarget.innerText.toLowerCase());
             });
-        });
+        }
 
         this.toggleMode();
         this.handleScroll();
