@@ -171,7 +171,7 @@ section{
     
 }
 nav,.cart{
-    display: none;
+    /* display: none; */
 }
 .spans{
     width:35px;
