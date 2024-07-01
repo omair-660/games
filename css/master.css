@@ -47,7 +47,7 @@ nav .navbar-brand img{
  .box{
     transition: 0.5s;
 }
- .cart .box:hover{
+ .cart:hover{
     filter: grayscale(0);
     transform: scale(1.05);
  }
