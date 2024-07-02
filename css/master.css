@@ -214,3 +214,11 @@ nav,.cart{
     outline: 0;
     box-shadow: none;
 }
+p.card-text.text-center.small.opacity-50.py-2 {
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 2;
+    display: -webkit-box;
+    overflow: hidden;
+}
