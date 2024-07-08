@@ -47,7 +47,7 @@ nav .navbar-brand img{
  .box{
     transition: 0.5s;
 }
- .cart:hover{
+ .cart .box:hover{
     filter: grayscale(0);
     transform: scale(1.05);
  }
@@ -213,12 +213,4 @@ nav,.cart{
     text-decoration: none;
     outline: 0;
     box-shadow: none;
-}
-p.card-text.text-center.small.opacity-50.py-2 {
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    line-height: 2;
-    display: -webkit-box;
-    overflow: hidden;
 }
